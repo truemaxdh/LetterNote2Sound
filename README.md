@@ -1,2 +1,2 @@
 # LetterNote2Sound
-Utility to play Letter Note
+JavaScript library to play letter note
