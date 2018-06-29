@@ -28,6 +28,9 @@ var Monophony = function() {
     this.oscillator.stop(now + 8);
   }
   this.parse = function(note, now) {
+    var octave = 4;
+    var beat = 1;
+    
     /*
     this.oscillator.frequency.setValueAtTime(261.63, now);
     this.oscillator.frequency.setValueAtTime(293.66, now + 1);
