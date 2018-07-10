@@ -33,10 +33,11 @@ var Monophony = function() {
     var beat = 1;
     var strBeat = "";
     var strNote = "";
+    var n2f = new note2freq();
     for (var i = 0; i < this.score.length; i++) {
       if (this.score[i] >= "A" && this.score[i] <= "G") {
         if (strNote != "") {
-          var freq = note2freq.getFreq(strNote);
+          var freq = n2f.getFreq(strNote);
           this.oscillator.frequency.setValueAtTime(freq, beat_sum);
           beat_sum += beat;
           beat = 1;
