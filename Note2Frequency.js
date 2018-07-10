@@ -113,10 +113,11 @@ var note2freq = function() {
 
   this.getFreq = function(strNote) {
     var freq = 0;
-    for(var i = 0; i < this.map_note2freq.length) {
+    for(var i = 0; i < this.map_note2freq.length; i++) {
       if (strNote == this.map_note2freq[i][0]) {
         freq = this.map_note2freq[i][1];
       }
     }
     return freq;
   }
+}
