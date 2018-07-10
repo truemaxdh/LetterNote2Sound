@@ -31,6 +31,7 @@ var Monophony = function() {
     var octave = 4;
     var beat_sum = now;
     var beat = 1;
+    var strBeat = "";
     var strNote = "";
     for (var i = 0; i < this.score.length; i++) {
       if (this.score[i] >= "A" && this.score[i] <= "G") {
@@ -39,8 +40,14 @@ var Monophony = function() {
           this.oscillator.frequency.setValueAtTime(freq, beat_sum);
           beat_sum += beat;
           beat = 1;
+          strBeat = "";
         }
         strNote = this.score[i];
+      } else if (this.score[i] == "#" || this.score[i] == "b") {
+        strNote += this.score[i];
+      } else if (this.score[i] >= "0" && this.score[i] <= "9" || this.score[i] == ".") {
+        strBeat += this.score[i];
+        beat = Number(strBeat);
       }
     }
     /*
