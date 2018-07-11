@@ -44,7 +44,7 @@ var Monophony = function() {
       if (this.score[i] >= "A" && this.score[i] <= "G" || this.score[i] == "-") {
         if (strNote != "") {
           var freq = n2f.getFreq(strNote + octave);
-          console.log(strNote + "," + beat + ":" + freq + "," + beat_sum);
+          //console.log(strNote + "," + beat + ":" + freq + "," + beat_sum);
           this.oscillator.frequency.setValueAtTime(freq, now + beat_sum / 2);
           beat_sum += beat;
           beat = 1;
@@ -73,7 +73,7 @@ var Monophony = function() {
     }
     if (strNote != "") {
       var freq = n2f.getFreq(strNote + octave);
-      console.log(strNote + "," + beat + ":" + freq + "," + beat_sum);
+      //console.log(strNote + "," + beat + ":" + freq + "," + beat_sum);
       this.oscillator.frequency.setValueAtTime(freq, now + beat_sum / 2);
       beat_sum += beat;
       this.oscillator.frequency.setValueAtTime(0, now + beat_sum / 2);
