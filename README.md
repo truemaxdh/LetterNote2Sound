@@ -1,6 +1,9 @@
 # LetterNote2Sound
 JavaScript library to play letter note
 
+[Demo](https://truemaxdh.github.io/LetterNote2Sound/)
+
+
 # 개발 목적
 WebAudio를 이용하여 음악 저작 및 연주를 하는 경우 사용할 수 있는 하부 컴포넌트 개발
 
@@ -46,3 +49,5 @@ sharp은 #, flat은 b로 표현
 "C1.5D0.5E1.5C0.5 | ECE2 | ..."
 ### 캐논 변주곡 첫부분
 "F#2E2D2C#2 | [3]B2A2B2[0]C#2 | ..."
+
+[Demo](https://truemaxdh.github.io/LetterNote2Sound/)
