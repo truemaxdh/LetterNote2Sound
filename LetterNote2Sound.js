@@ -43,12 +43,13 @@ var Monophony = function() {
     for (var i = 0; i < this.score.length; i++) {
       if (this.score[i] >= "A" && this.score[i] <= "G" || this.score[i] == "-") {
         if (strNote != "") {
-          var freq = n2f.getFreq(strNote + octave);
-          //console.log(strNote + "," + beat + ":" + freq + "," + beat_sum);
+          var freq = n2f.getFreq(strNote + octave_tmp);
+          console.log(strNote + octave_tmp + "," + beat + ":" + freq + "," + beat_sum);
           this.oscillator.frequency.setValueAtTime(freq, now + beat_sum / 2);
           beat_sum += beat;
           beat = 1;
           strBeat = "";
+          octave_tmp = octave;
         }
         strNote = this.score[i];
       } else if (this.score[i] == "#" || this.score[i] == "b") {
@@ -66,13 +67,14 @@ var Monophony = function() {
       } else if (this.score[i] >= "0" && this.score[i] <= "9" || this.score[i] == ".") {
         if (octave_flag > 0) {
           strOctave += this.score[i];
+        } else {
+          strBeat += this.score[i];
+          beat = Number(strBeat);
         }
-        strBeat += this.score[i];
-        beat = Number(strBeat);
       }
     }
     if (strNote != "") {
-      var freq = n2f.getFreq(strNote + octave);
+      var freq = n2f.getFreq(strNote + octave_tmp);
       //console.log(strNote + "," + beat + ":" + freq + "," + beat_sum);
       this.oscillator.frequency.setValueAtTime(freq, now + beat_sum / 2);
       beat_sum += beat;
